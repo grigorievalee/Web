@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {%  include 'Include/Head.html' %}
+</head>
+<header>
+    {%  include 'Header.html' %}
+</header>
+
+
+<body class="text-center container">
+    <form action="/Authorization" method="post" class="form-signin mt-5">
+        {% for SMS_CSS, SMS in get_flashed_messages(True) %}
+        <p class="lead {{SMS_CSS}}">{{ SMS }}</p>
+        {% endfor %}
+        <h1 class="h3 mb-3 font-weight-normal mt-5">Авторизация</h1>
+        <input type="text" name="Login" class="form-control mt-5" placeholder="Логин" required>
+        <input type="password" name="Pass" class="form-control mt-1" placeholder="Пароль" required>
+        <button class="btn btn-lg btn-primary btn-block mt-5" type="submit">Войти</button>
+    </form>
+</body>
+
+<footer> {%  include 'Include/Footer.html' %}  </footer>
+</html>
+

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {%  include 'Include/Head.html' %}
+</head>
+<header>
+    {%  include 'Header.html' %}
+</header>
+
+<body class=" container pl-4">
+   
+    <form action="/Result" method="post">
+        {% for I in range(1,7) %}
+        <p class="lead mt-5">{{ TEST[I][1] }}</p>
+        <p class="ml-5 pl-2"><input checked  type="radio" value="1" name="{{TEST[I][0]}}">  {{TEST[I][2]}}</p>
+        <p class="ml-5 pl-2"><input  type="radio" value="2" name="{{TEST[I][0]}}">  {{TEST[I][3]}}</p>
+        <p class="ml-5 pl-2"><input  type="radio" value="3" name="{{TEST[I][0]}}">  {{TEST[I][4]}}</p>
+        <p class="ml-5 pl-2"><input  type="radio" value="4" name="{{TEST[I][0]}}">  {{TEST[I][5]}}</p>
+
+            <img class=" text-center border border-primary ml-md-5 mt-5" width="600" height="400" src={{ url_for('static', filename= TEST[I][0] +'.jpg')}} )
+            <hr>
+            {% endfor %}
+            <button class="btn btn-lg btn-primary btn-block mt-5" type="submit">Закончить тест</button>
+    </form>
+</body>
+
+<footer> {%  include 'Include/Footer.html' %}  </footer>
+</html>
+

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {%  include 'Include/Head.html' %}
+</head>
+<header>
+    {%  include 'Header.html' %}
+</header>
+
+<body class="text-center container">
+    <body class=" container pl-4">
+
+        {% for X in range(6) %}
+        {% if RES[X] == OTV[X] %}
+        <p class="lead mt-5 green">Ответ {{X+1}} : {{ "Правильно" }}</p>
+        {% else %}
+        <p class="lead mt-5 red">Ответ {{X+1}} : {{ "Неправильно" }}</p>
+        {% endif %}
+        {% endfor %}
+
+        </form>
+    </body>
+</body>
+
+<footer> {%  include 'Include/Footer.html' %}  </footer>
+</html>
+
